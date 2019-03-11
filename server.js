@@ -2,16 +2,17 @@ var express = require('express');
 var port = process.env.PORT || 3000;
 var app = express();
 
+app.use(express.json());
+
 app.get("/hello", (req, res) => {
   res.send("Hello World");
 })
 
 app.post("/chat", (req, res) => {
-  const msg = req.msg;
-  if(msg != "ville\n"){
-    res.send("Nous sommes à Paris");
-  }else if(msg != "météo\n"){
-    res.send("Il fait beau")
+  if(req.body.msg === "ville"){
+    res.send("Nous sommes à Paris\n");
+  }else if(req.body.msg === "météo"){
+    res.send("Il fait beau\n")
   }
 })
 
