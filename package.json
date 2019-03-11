@@ -1,5 +1,5 @@
 {
-  "name": "chat bot",
+  "name": "chat_bot",
   "version": "1.0.0",
   "description": "express js",
   "main": "server.js",
