@@ -7,6 +7,6 @@ app.get("/hello", (req, res) => {
   res.send("Hello World!");
 })
 
-app.listen(8080, () => {
+app.listen(3000, () => {
   console.log("Server is up and listnening on port 8080...");
 })

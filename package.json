@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/RamzyK/semaine_node#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "heroku": "^7.22.4"
   }
 }
