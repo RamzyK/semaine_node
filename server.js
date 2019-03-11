@@ -8,9 +8,9 @@ app.get("/hello", (req, res) => {
 
 app.post("/chat", (req, res) => {
   const msg = req.msg;
-  if(msg != "ville"){
+  if(msg != "ville\n"){
     res.send("Nous sommes à Paris");
-  }else if(msg != "météo"){
+  }else if(msg != "météo\n"){
     res.send("Il fait beau")
   }
 })
