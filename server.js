@@ -1,12 +1,12 @@
 var express = require('express');
+var port = process.env.PORT || 3000;
 
 var app = express();
 
 app.get("/hello", (req, res) => {
-  console.log("Responding to root...");
-  res.send("Hello World!");
+  res.send("Hello World");
 })
 
-app.listen(3000, () => {
-  console.log("Server is up and listnening on port 8080...");
+app.listen(port, () => {
+  console.log("Server is up and listnening on port " + port);
 })
