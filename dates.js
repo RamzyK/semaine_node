@@ -2,7 +2,7 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
 const url = 'mongodb://localhost:27017';
-const dbName = 'myproject';
+const dbName = 'dates';
 
 (async function() {
   const client = new MongoClient(url);
@@ -14,12 +14,11 @@ const dbName = 'myproject';
     const db = client.db(dbName);
 
     // Insert a single document
-    let r = await db.collection('inserts').insertOne({a:1});
-    assert.equal(1, r.insertedCount);
+    let r = await db.collection('inserts').insertOne({dates: new Date()});
 
+    const col = await db.collection('inserts').find().toArray();
     // Insert multiple documents
-    r = await db.collection('inserts').insertMany([{a:2}, {a:3}]);
-    console.log(r);
+    console.log(col);
   } catch (err) {
     console.log(err.stack);
   }
