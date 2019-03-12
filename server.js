@@ -88,7 +88,7 @@
         // Insert multiple documents
         const messages = await db.collection('messages').find().toArray();
         console.log("All messages: " + (JSON.stringify(messages)) + "\n");
-        res.send(messages + "\n");
+        res.send((JSON.stringify(messages)) + "\n");
       } catch (err) {
         console.log(err.stack);
       }
